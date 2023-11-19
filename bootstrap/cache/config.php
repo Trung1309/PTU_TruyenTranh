@@ -195,7 +195,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'D:\\New Volume\\DaiHoc\\Studies_7\\CongNgheMoi\\ProjectLaravel\\test1\\storage\\framework/cache/data',
+        'path' => 'D:\\PTU_TruyenTranh\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -368,13 +368,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\New Volume\\DaiHoc\\Studies_7\\CongNgheMoi\\ProjectLaravel\\test1\\storage\\app',
+        'root' => 'D:\\PTU_TruyenTranh\\storage\\app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\New Volume\\DaiHoc\\Studies_7\\CongNgheMoi\\ProjectLaravel\\test1\\storage\\app/public',
+        'root' => 'D:\\PTU_TruyenTranh\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
@@ -394,7 +394,7 @@
     ),
     'links' => 
     array (
-      'D:\\New Volume\\DaiHoc\\Studies_7\\CongNgheMoi\\ProjectLaravel\\test1\\public\\storage' => 'D:\\New Volume\\DaiHoc\\Studies_7\\CongNgheMoi\\ProjectLaravel\\test1\\storage\\app/public',
+      'D:\\PTU_TruyenTranh\\public\\storage' => 'D:\\PTU_TruyenTranh\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -433,13 +433,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'D:\\New Volume\\DaiHoc\\Studies_7\\CongNgheMoi\\ProjectLaravel\\test1\\storage\\logs/laravel.log',
+        'path' => 'D:\\PTU_TruyenTranh\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'D:\\New Volume\\DaiHoc\\Studies_7\\CongNgheMoi\\ProjectLaravel\\test1\\storage\\logs/laravel.log',
+        'path' => 'D:\\PTU_TruyenTranh\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -491,7 +491,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'D:\\New Volume\\DaiHoc\\Studies_7\\CongNgheMoi\\ProjectLaravel\\test1\\storage\\logs/laravel.log',
+        'path' => 'D:\\PTU_TruyenTranh\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -557,7 +557,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'D:\\New Volume\\DaiHoc\\Studies_7\\CongNgheMoi\\ProjectLaravel\\test1\\resources\\views/vendor/mail',
+        0 => 'D:\\PTU_TruyenTranh\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -664,7 +664,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'D:\\New Volume\\DaiHoc\\Studies_7\\CongNgheMoi\\ProjectLaravel\\test1\\storage\\framework/sessions',
+    'files' => 'D:\\PTU_TruyenTranh\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -684,9 +684,9 @@
   array (
     'paths' => 
     array (
-      0 => 'D:\\New Volume\\DaiHoc\\Studies_7\\CongNgheMoi\\ProjectLaravel\\test1\\resources\\views',
+      0 => 'D:\\PTU_TruyenTranh\\resources\\views',
     ),
-    'compiled' => 'D:\\New Volume\\DaiHoc\\Studies_7\\CongNgheMoi\\ProjectLaravel\\test1\\storage\\framework\\views',
+    'compiled' => 'D:\\PTU_TruyenTranh\\storage\\framework\\views',
   ),
   'flare' => 
   array (
@@ -761,7 +761,7 @@
     array (
     ),
     'enable_runnable_solutions' => NULL,
-    'remote_sites_path' => 'D:\\New Volume\\DaiHoc\\Studies_7\\CongNgheMoi\\ProjectLaravel\\test1',
+    'remote_sites_path' => 'D:\\PTU_TruyenTranh',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',
