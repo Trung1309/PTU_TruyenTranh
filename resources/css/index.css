@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header .navbar-nav li{
+    position: relative;
+}
+
+header .navbar-nav li .sub-menu{
+    position: absolute;
+    background: #f8f9fa;
+    width: 300px;
+    padding: 10px;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+}
+
+header .navbar-nav li .sub-menu li{
+    list-style: none;
+    width: 100%;
+
+}
+
+header .navbar-nav li .sub-menu li a{
+    text-decoration: none;
+    color: black;
+}
+
+header .navbar-nav li:hover .sub-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+main .slider{
+    position: relative;
+}
+main .slider .slider-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    position: relative;
+    margin: 10px;
+
+}
+main .slider .slider-item .slider-avt{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+main .slider .slider-item .slider-content{
+    position:absolute;
+    z-index: 10;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black ;
+
+}
+main .slider .slider-item .slider-content .slider-title{
+    color: #f8f9fa;
+}
+
+.slick-prev {
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    left: -10px;
+    border: none;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.slick-next {
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    right: -10px;
+    border: none;
+    background: black;
+    align-items: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+section{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+section .section-tilte{
+    font-size: 23px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+main .content{
+}
+main .content .main-content{
+
+}
+main .content .navbar-{
+
+}
+.part-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px
+
+}
+.content-right{
+    padding: 20px;
+}
+.content-left{
+    padding: 20px;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    gap: 15px;
+}
+.card-item{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.card-item .card-title{
+    width: 100px;
+}
+.card-item .card-avt{
+    width: 100%;
+    height: 200px;
+
+}
+.card-item .card-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.card-item .card-avt img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sidebar{
+    border: 1px solid #ecf0f1;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.sidebar ul {
+
+}
+.sidebar ul li{
+    list-style: none;
+    margin: 10px;
+}
+
+
+
+
+
+
+
+
+.login-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+
+.login-form form{
+    width: 50%;
+    border: 1px solid#ecf0f1;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 20px;
+}
+
+
+
+
+.dash-left{
+    background: gray;
+    height: 700px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.dash-left ul{
+    margin-top: 20px;
+}
+.dash-left ul li{
+    padding: 10px;
+
+}
+.dash-left ul li a{
+    color: #ecf0f1;
+}
