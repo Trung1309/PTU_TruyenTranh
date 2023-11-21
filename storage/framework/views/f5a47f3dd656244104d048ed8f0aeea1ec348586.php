@@ -3,23 +3,29 @@
 <?php $__env->startSection('content'); ?>
 <?php echo $__env->make('header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
       <div class="container">
-        <?php if(session('loginError')): ?>
-            <div class="alert alert-danger" role="alert">
-                <?php echo e(session('loginError')); ?>
+        <?php if(Session::has('success')): ?>
+            <div class="alert alert-success" role="alert">
+                <?php echo e(Session::get('success')); ?>
 
             </div>
         <?php endif; ?>
         <div class="login-form">
-            <form class="bg-light">
+            <form method="post" action="<?php echo e(route('login.post')); ?>" class="bg-light">
+              <?php echo csrf_field(); ?>
                 <h2 style="text-align: center;">Đăng nhập vào PTU</h2>
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
+                  <label for="email" class="form-label">Email</label>
+                  <input name="email"  type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your Email">
+                  <?php if($errors->has('email')): ?>
+                      <span class="text-danger"><?php echo e($errors->first('email')); ?></span>
+                  <?php endif; ?>
                 </div>
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Mật khẩu</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <label for="password" class="form-label">Mật khẩu</label>
+                  <input type="password" name="password" class="form-control" id="password" placeholder="Enter your Password">
+                  <?php if($errors->has('password')): ?>
+                      <span class="text-danger"><?php echo e($errors->first('password')); ?></span>
+                  <?php endif; ?>
                 </div>
                 <div class="mb-3 form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -27,11 +33,12 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-primary" style="margin-bottom: 10px;">Đăng nhập</button>
+                <input class="btn-success" type="submit" name="submit" id="submit" value="Đăng nhập">
+                
 
 
                 <div class="row">
-                    <a href="<?php echo e(route('custom.register.form')); ?>" class="col-md-6"> Đăng kí </a>
+                    <a href="<?php echo e(url('register')); ?>" class="col-md-6"> Đăng kí </a>
                     <div class="col-md-6">
                         <a href="<?php echo e(route('custom.forgot.form')); ?>" class="" style="text-align: right !important;"> Quên mật khẩu ?</a>
                     </div>

@@ -29,9 +29,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Giới thiệu</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('custom.login.form')}}">Đăng nhập</a>
-                    </li>
+                    
+                    @guest
+                        <li class="nav-item"><a class="nav-link" href="{{ url('login') }}"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('register') }}"><span class="glyphicon glyphicon-user"></span> Đăng ký</a></li>
+                    @else
+                        <li class="nav-item"><a class="nav-link">{{ Auth::user()->name }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('logout') }}"><span class="glyphicon glyphicon-log-in"></span>Đăng xuất</a></li>
+                    @endguest
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search">

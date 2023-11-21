@@ -3,22 +3,28 @@
 @section('content')
 @include('header')
       <div class="container">
-        @if(session('loginError'))
-            <div class="alert alert-danger" role="alert">
-                {{ session('loginError') }}
+        @if(Session::has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ Session::get('success') }}
             </div>
         @endif
         <div class="login-form">
-            <form class="bg-light">
+            <form method="post" action="{{ route('login.post') }}" class="bg-light">
+              @csrf
                 <h2 style="text-align: center;">Đăng nhập vào PTU</h2>
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
+                  <label for="email" class="form-label">Email</label>
+                  <input name="email"  type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your Email">
+                  @if ($errors->has('email'))
+                      <span class="text-danger">{{ $errors->first('email') }}</span>
+                  @endif
                 </div>
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Mật khẩu</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <label for="password" class="form-label">Mật khẩu</label>
+                  <input type="password" name="password" class="form-control" id="password" placeholder="Enter your Password">
+                  @if ($errors->has('password'))
+                      <span class="text-danger">{{ $errors->first('password') }}</span>
+                  @endif
                 </div>
                 <div class="mb-3 form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -26,11 +32,12 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-primary" style="margin-bottom: 10px;">Đăng nhập</button>
+                <input class="btn-success" type="submit" name="submit" id="submit" value="Đăng nhập">
+                
 
 
                 <div class="row">
-                    <a href="{{route('custom.register.form')}}" class="col-md-6"> Đăng kí </a>
+                    <a href="{{url('register')}}" class="col-md-6"> Đăng kí </a>
                     <div class="col-md-6">
                         <a href="{{route('custom.forgot.form')}}" class="" style="text-align: right !important;"> Quên mật khẩu ?</a>
                     </div>

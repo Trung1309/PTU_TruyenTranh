@@ -29,9 +29,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Giới thiệu</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo e(route('custom.login.form')); ?>">Đăng nhập</a>
-                    </li>
+                    
+                    <?php if(auth()->guard()->guest()): ?>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo e(url('login')); ?>"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo e(url('register')); ?>"><span class="glyphicon glyphicon-user"></span> Đăng ký</a></li>
+                    <?php else: ?>
+                        <li class="nav-item"><a class="nav-link"><?php echo e(Auth::user()->name); ?></a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo e(url('logout')); ?>"><span class="glyphicon glyphicon-log-in"></span>Đăng xuất</a></li>
+                    <?php endif; ?>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search">

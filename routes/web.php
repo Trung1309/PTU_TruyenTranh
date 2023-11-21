@@ -19,14 +19,19 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('custom.login.form');
-Route::post('/login', [LoginController::class, 'login'])->name('custom.login');
-Route::get('/login/forgot', [LoginController::class, 'showForgot'])->name('custom.forgot.form');
-Route::get('/register', [LoginController::class, 'showRegisterForm'])->name('custom.register.form');
+Route::get('login', [LoginController::class, 'login'])->name('login');
+Route::get('register', [LoginController::class, 'register'])->name('register');
+
+Route::post('login', [LoginController::class, 'postLogin'])->name('login.post');
+Route::post('register', [LoginController::class, 'postRegister'])->name('register.post');
+
+Route::get('login/forgot', [LoginController::class, 'showForgot'])->name('custom.forgot.form');
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboad.index');
 Route::get('/admin/add', [AdminController::class, 'showFormAddBook'])->name('admin.book.add');
 Route::get('/admin/edit', [AdminController::class, 'showFormEditBook'])->name('admin.book.edit');
+
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route::prefix('admin')->group(function () {
 //     Route::get('/dashboad', 'AdminController@index')->name('admin.dashboad');
