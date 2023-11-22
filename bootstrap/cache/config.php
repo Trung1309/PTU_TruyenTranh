@@ -663,7 +663,7 @@
     array (
       'client_id' => '56799389928-1f7i57f65tfv37ktvqadhb7e8ctic0e2.apps.googleusercontent.com',
       'client_secret' => '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',
-      'redirect' => '/auth/google/callback',
+      'redirect' => 'http://localhost:8000/auth/google/callback',
     ),
   ),
   'session' => 
