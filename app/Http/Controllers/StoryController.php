@@ -16,6 +16,8 @@ class StoryController extends Controller
     public function index()
     {
         //
+
+
         $story = StoryModel::paginate(10);
         return view('Admin.dashboard',compact('story'))->with('i',(request()->input('page',1)-1)*10);
     }

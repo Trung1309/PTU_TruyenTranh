@@ -23,10 +23,6 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <strong>Mã thể loại</strong>
-                                <input type="text" name="categoryID" class="form-control" placeholder="Nhập mã thể loại">
-                            </div>
-                            <div class="form-group">
                                 <strong>Tên thể loại</strong>
                                 <input type="text" name="categoryName" class="form-control" placeholder="Nhập tên thể loại">
                             </div>
@@ -47,7 +43,6 @@
                     <table class="table">
                         <thead>
                           <tr>
-                            <th scope="col">STT</th>
                             <th scope="col">Mã Thể loại</th>
                             <th scope="col">Tên thể loại</th>
                             <th scope="col">Tuỳ chọn</th>
@@ -73,12 +68,11 @@
                         <tbody>
                             @foreach ( $category as $cat )
                                 <tr>
-                                    <th scope="row">{{$i++}}</th>
                                     <td>{{$cat->categoryID}}</td>
                                     <td>{{$cat->categoryName}}</td>
                                     <td>
-                                        <form action="{{route('category.destroy',$cat->id)}}" method="POST">
-                                            <a href="{{route('category.edit',$cat->id)}}" class="btn btn-info">Sửa</a>
+                                        <form action="{{route('category.destroy',$cat->categoryID)}}" method="POST">
+                                            <a href="{{route('category.edit',$cat->categoryID)}}" class="btn btn-info">Sửa</a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa cuốn sách không?')">Xoá</button>

@@ -23,7 +23,7 @@
                             <th scope="col">Hỉnh ảnh</th>
                             <th scope="col">Tên sách</th>
                             <th scope="col">Tác giả</th>
-                            <th scope="col">Mô tả</th>
+                            <th scope="col">Thể loại</th>
                             <th scope="col">Tuỳ chỉnh</th>
                         </tr>
                     </thead>
@@ -43,7 +43,7 @@
                                 </td>
                                 <td>{{ $str->storyName }}</td>d
                                 <td>{{ $str->storyAuthor }}</td>
-                                <td>{{ $str->storyDesc}}</td>
+                                <td>{{ $str->category->categoryName}}</td>
                                 <td>
                                     <form action="{{route('stories.destroy',$str->storyID)}}" method="POST">
                                         <a href="{{route('stories.edit',$str->storyID)}}" class="btn btn-info">Sửa</a>

@@ -12,16 +12,11 @@
                             {{ Session::get('success') }}
                         </div>
                     @endif
-                    <form action="{{ route('category.update', $category->id) }}" method="POST">
+                    <form action="{{ route('category.update', $category->categoryID) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <strong>Mã thể loại</strong>
-                                    <input value="{{ $category->categoryID }}" type="text" name="categoryID"
-                                        class="form-control" placeholder="Nhập mã thể loại">
-                                </div>
                                 <div class="form-group">
                                     <strong>Tên thể loại</strong>
                                     <input value="{{ $category->categoryName }}" type="text" name="categoryName"

@@ -16,20 +16,20 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <strong>Tên Sách</strong>
+                                <strong>Tên Sách <span style="color: red">*</span></strong>
                                 <input type="text" name="storyName" class="form-control" placeholder="Nhập tên sách">
                             </div>
 
                             <div class="form-group">
-                                <strong>Tác giả</strong>
+                                <strong>Tác giả <span style="color: red">*</span></strong>
                                 <input type="text" name="storyAuthor" class="form-control" placeholder="Nhập tác giả">
                             </div>
                             <div class="form-group">
-                                <strong>Mô tả</strong>
+                                <strong>Mô tả <span style="color: red">*</span></strong>
                                 <input type="text" name="storyDesc" class="form-control" placeholder="Nhập mô tả">
                             </div>
                             <div class="form-group">
-                                <strong>Nội dung</strong>
+                                <strong>Nội dung <span style="color: red">*</span></strong>
                                 <textarea class="form-control" name="storyContent" id="" cols="30" rows="10" placeholder="Nhập nội dung"></textarea>
 
                             </div>
@@ -37,15 +37,16 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <strong>Thể loại</strong><br>
+                                <strong>Thể loại <span style="color: red">*</span></strong><br>
                                 <select name="categoryID" class="form-select" aria-label="Default select example">
+                                    <option selected disabled>Chọn thể loại</option>
                                     <?php $__currentLoopData = $category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <option value="<?php echo e($cat->categoryID); ?>"><?php echo e($cat->categoryName); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <strong>Hình ảnh</strong>
+                                <strong>Hình ảnh <span style="color: red">*</span></strong>
                                 <input type="file" name="storyImage"  id="image-input" class="form-control" accept="image/*"  placeholder="tải lên">
                                 <div id="preview-container"  >
                                     <img id="image-preview" class="image-preview">

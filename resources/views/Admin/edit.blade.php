@@ -32,14 +32,16 @@
                             </div>
                             <div class="form-group">
                                 <strong>Nội dung</strong>
-                                <textarea   class="form-control" name="storyContent" id="" cols="30" rows="10" placeholder="Nhập nội dung">{{$story->storyContent}}</textarea>
+                                <textarea value=""  class="form-control" name="storyContent" id="" cols="30" rows="10" placeholder="Nhập nội dung">{{$story->storyContent}}</textarea>
                             </div>
 
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <strong>Thể loại</strong><br>
+                                <p>Thể loại hiện tại: <span style="color: red">{{$story->category->categoryName}}</span></p>
                                 <select name="categoryID" class="form-select" aria-label="Default select example">
+                                    <option selected>Chọn thể loại muốn cập nhật</option>
                                     @foreach ($category as $cat)
                                         <option value="{{ $cat->categoryID }}">{{ $cat->categoryName }}</option>
                                     @endforeach

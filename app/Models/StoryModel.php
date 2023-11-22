@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\CategoryModel;
 
 class StoryModel extends Model
 {
@@ -18,4 +19,8 @@ class StoryModel extends Model
         'categoryID'
     ];
     protected $primaryKey = 'storyID';
+
+    public function category(){
+        return $this->belongsTo(CategoryModel::class, 'categoryID');
+    }
 }

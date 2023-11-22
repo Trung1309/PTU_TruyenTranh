@@ -19,12 +19,10 @@ class CategoryController extends Controller
 
 
         $request->validate([
-            'categoryID' => 'required|unique:category_models',
             'categoryName' => 'required',
         ]);
 
         $category = new CategoryModel([
-            'categoryID' => $request->input('categoryID'),
             'categoryName' => $request->input('categoryName'),
         ]);
 
