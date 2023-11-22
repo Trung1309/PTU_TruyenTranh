@@ -35,7 +35,7 @@
                         <a href="{{route('custom.forgot.form')}}" class="" style="text-align: right !important;"> Quên mật khẩu ?</a>
                     </div>
                 </div>
-                <a href="" class="btn btn-google btn-user btn-block " style="background: #e74c3c; color: #fff;"><i class="fa-brands fa-google" style="color: #fafafa;"></i>  Google</a>
+                <a href="{{route('custom.google')}}" class="btn btn-google btn-user btn-block " style="background: #e74c3c; color: #fff;"><i class="fa-brands fa-google" style="color: #fafafa;"></i>  Google</a>
                 <a href="" class="btn btn-google btn-user btn-block " style="background: #3498db; color: #fff;"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>  Facebook</a>
               </form>
         </div>

@@ -25,6 +25,8 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('custom.lo
 Route::post('/login', [LoginController::class, 'login'])->name('custom.login');
 Route::get('/login/forgot', [LoginController::class, 'showForgot'])->name('custom.forgot.form');
 Route::get('/register', [LoginController::class, 'showRegisterForm'])->name('custom.register.form');
+Route::get('/login/google',  [LoginController::class, 'redirectToGoogle'])->name('custom.google');
+Route::get('/login/google/callback', [LoginController::class, 'handleGoogleCallback'])->name('custom.google.callback');
 
 
 // Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboad.index');
@@ -38,4 +40,10 @@ Route::get('/register', [LoginController::class, 'showRegisterForm'])->name('cus
 Route::resource('/stories',StoryController::class);
 
 Route::resource('/category',CategoryController::class);
+
+
+// Trong routes/web.php
+
+
+
 

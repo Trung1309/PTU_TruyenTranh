@@ -657,6 +657,12 @@
       'secret' => '',
       'region' => 'us-east-1',
     ),
+    'google' => 
+    array (
+      'client_id' => '1071320858350-r231brusqh6agu2apq2rqjcdigdelm0i.apps.googleusercontent.com',
+      'client_secret' => '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',
+      'redirect' => 'http://127.0.0.1:8000/login/google/callback',
+    ),
   ),
   'session' => 
   array (
