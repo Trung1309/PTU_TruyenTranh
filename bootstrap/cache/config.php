@@ -40,10 +40,11 @@
       19 => 'Illuminate\\Translation\\TranslationServiceProvider',
       20 => 'Illuminate\\Validation\\ValidationServiceProvider',
       21 => 'Illuminate\\View\\ViewServiceProvider',
-      22 => 'App\\Providers\\AppServiceProvider',
-      23 => 'App\\Providers\\AuthServiceProvider',
-      24 => 'App\\Providers\\EventServiceProvider',
-      25 => 'App\\Providers\\RouteServiceProvider',
+      22 => 'Laravel\\Socialite\\SocialiteServiceProvider',
+      23 => 'App\\Providers\\AppServiceProvider',
+      24 => 'App\\Providers\\AuthServiceProvider',
+      25 => 'App\\Providers\\EventServiceProvider',
+      26 => 'App\\Providers\\RouteServiceProvider',
     ),
     'aliases' => 
     array (
@@ -86,6 +87,7 @@
       'Validator' => 'Illuminate\\Support\\Facades\\Validator',
       'View' => 'Illuminate\\Support\\Facades\\View',
       'Vite' => 'Illuminate\\Support\\Facades\\Vite',
+      'Socialite' => 'Laravel\\Socialite\\Facades\\Socialite',
     ),
   ),
   'auth' => 
@@ -503,11 +505,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'mailpit',
-        'port' => '1025',
-        'encryption' => NULL,
-        'username' => NULL,
-        'password' => NULL,
+        'host' => 'stmp.gmail.com',
+        'port' => '587',
+        'encryption' => 'tls',
+        'username' => 'phamlonguyen91@gmail.com',
+        'password' => 'PhamLongUyen@1',
         'timeout' => NULL,
         'local_domain' => NULL,
       ),
@@ -549,7 +551,7 @@
     ),
     'from' => 
     array (
-      'address' => 'hello@example.com',
+      'address' => 'appdoctruyen_put@laravel.com',
       'name' => 'Laravel',
     ),
     'markdown' => 
@@ -656,6 +658,12 @@
       'key' => '',
       'secret' => '',
       'region' => 'us-east-1',
+    ),
+    'google' => 
+    array (
+      'client_id' => '56799389928-1f7i57f65tfv37ktvqadhb7e8ctic0e2.apps.googleusercontent.com',
+      'client_secret' => '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',
+      'redirect' => '/auth/google/callback',
     ),
   ),
   'session' => 

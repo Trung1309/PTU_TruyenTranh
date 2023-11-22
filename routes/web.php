@@ -5,6 +5,13 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 
+use Laravel\Socialite\Facades\Socialite;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,7 +40,12 @@ Route::get('/admin/edit', [AdminController::class, 'showFormEditBook'])->name('a
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
+
+Route::get('/googleLogin', [LoginController::class, 'googleLogin']);
+Route::get('/auth/google/callback', [LoginController::class, 'googleHandle']);
+
 // Route::prefix('admin')->group(function () {
 //     Route::get('/dashboad', 'AdminController@index')->name('admin.dashboad');
 // });
+
 
