@@ -140,9 +140,6 @@ main .content .navbar-{
     flex-direction: column;
     overflow: hidden;
 }
-.card-item .card-title{
-    width: 100px;
-}
 .card-item .card-avt{
     width: 100%;
     height: 200px;
@@ -152,11 +149,28 @@ main .content .navbar-{
     display: flex;
     flex-direction: column;
     width: 100%;
+    flex: 1;
 }
 .card-item .card-avt img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.card-item .card-content .card-cat{
+    display: block;
+    margin-top: auto;
+}
+.card-item .card-content .card-title{
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    font-size: 14px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .sidebar{
     border: 1px solid #ecf0f1;

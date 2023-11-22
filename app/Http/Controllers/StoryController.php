@@ -18,7 +18,7 @@ class StoryController extends Controller
         //
 
 
-        $story = StoryModel::paginate(10);
+        $story = StoryModel::orderBy('created_at', 'desc')->get();
         return view('Admin.dashboard',compact('story'))->with('i',(request()->input('page',1)-1)*10);
     }
 
@@ -111,8 +111,8 @@ class StoryController extends Controller
             'storyContent' => 'required',
             'storyAuthor' => 'required',
             'storyDesc' => 'required',
-            'categoryID' => 'required|exists:category_models,categoryID',
-            'storyImage' => 'image|mimes:jpeg,png,jpg,gif',
+            'categoryID' => '',
+            'storyImage' => '',
         ]);
 
         if ($request->hasFile('storyImage')) {

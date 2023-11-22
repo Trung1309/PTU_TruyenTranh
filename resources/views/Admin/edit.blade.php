@@ -41,9 +41,9 @@
                                 <strong>Thể loại</strong><br>
                                 <p>Thể loại hiện tại: <span style="color: red">{{$story->category->categoryName}}</span></p>
                                 <select name="categoryID" class="form-select" aria-label="Default select example">
-                                    <option selected>Chọn thể loại muốn cập nhật</option>
+                                    <option selected value="{{$story->categoryID}}">{{$story->category->categoryName}}</option>
                                     @foreach ($category as $cat)
-                                        <option value="{{ $cat->categoryID }}">{{ $cat->categoryName }}</option>
+                                        <option value="{{ $cat->categoryID }}" >{{ $cat->categoryName }}</option>
                                     @endforeach
                                 </select>
                             </div>

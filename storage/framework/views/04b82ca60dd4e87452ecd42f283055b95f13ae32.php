@@ -46,7 +46,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <strong>Hình ảnh <span style="color: red">*</span></strong>
+                                <strong>Hình ảnh </strong>
                                 <input type="file" name="storyImage"  id="image-input" class="form-control" accept="image/*"  placeholder="tải lên">
                                 <div id="preview-container"  >
                                     <img id="image-preview" class="image-preview">

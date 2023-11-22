@@ -15,7 +15,7 @@
                     </div>
                 <?php endif; ?>
 
-                <table class="table">
+                <table class="table" style="margin-top: 20px">
                     <thead>
                         <tr>
                             <th scope="col">id</th>
@@ -40,7 +40,7 @@
                                         No Image
                                     <?php endif; ?>
                                 </td>
-                                <td><?php echo e($str->storyName); ?></td>d
+                                <td><?php echo e($str->storyName); ?></td>
                                 <td><?php echo e($str->storyAuthor); ?></td>
                                 <td><?php echo e($str->category->categoryName); ?></td>
                                 <td>

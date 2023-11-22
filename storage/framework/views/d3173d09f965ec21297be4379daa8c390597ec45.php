@@ -59,54 +59,17 @@
                 <div class="content-right col-md-8">
                     <div class="part-title"> Truyện mới nhất</div>
                     <div class="cards ">
+                        <?php $__currentLoopData = $story; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $str): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="card-item">
                             <div class="card-avt">
-                                <img src="https://popsimg.akamaized.net/api/v2/containers/file2/cms_thumbnails/covo1-21d0099ab6d3-1685529314543-aR7jggrC.png?v=0&maxW=320&format=jpg" alt="">
+                                <img src="<?php echo e(asset('uploads/' . $str->storyImage)); ?>" alt="">
                             </div>
                             <div class="card-content">
-                                <div class="card-title"><a href="#" >DoraDoraemonDoraemonDoraemonDoraemonDoraemonemon</a></div>
-                                <div class="card-view">2000 lượt xem</div>
+                                <div class="card-title"><a href="#" ><?php echo e($str->storyName); ?></a></div>
+                                <div class="card-cat"><?php echo e($str->category->categoryName); ?>    </div>
                             </div>
                         </div>
-                        <div class="card-item">
-                            <div class="card-avt">
-                                <img src="https://popsimg.akamaized.net/api/v2/containers/file2/cms_thumbnails/covo1-21d0099ab6d3-1685529314543-aR7jggrC.png?v=0&maxW=320&format=jpg" alt="">
-                            </div>
-                            <div class="card-content">
-                                <div class="card-title"><a href="#" >Doraemon</a></div>
-                                <div class="card-view">2000 lượt xem</div>
-                            </div>
-                        </div>
-                        <div class="card-item">
-                            <div class="card-avt">
-                                <img src="https://popsimg.akamaized.net/api/v2/containers/file2/cms_thumbnails/covo1-21d0099ab6d3-1685529314543-aR7jggrC.png?v=0&maxW=320&format=jpg" alt="">
-                            </div>
-                            <div class="card-content">
-                                <div class="card-title"><a href="#" >Doraemon</a></div>
-                                <div class="card-view">2000 lượt xem</div>
-                            </div>
-                        </div>
-                        <div class="card-item">
-                            <div class="card-avt">
-                                <img src="https://popsimg.akamaized.net/api/v2/containers/file2/cms_thumbnails/covo1-21d0099ab6d3-1685529314543-aR7jggrC.png?v=0&maxW=320&format=jpg" alt="">
-                            </div>
-                            <div class="card-content">
-                                <div class="card-title"><a href="#" >Doraemon</a></div>
-                                <div class="card-view">2000 lượt xem</div>
-                            </div>
-                        </div>
-                        <div class="card-item">
-                            <div class="card-avt">
-                                <img src="https://popsimg.akamaized.net/api/v2/containers/file2/cms_thumbnails/covo1-21d0099ab6d3-1685529314543-aR7jggrC.png?v=0&maxW=320&format=jpg" alt="">
-                            </div>
-                            <div class="card-content">
-                                <div class="card-title"><a href="#" >Doraemon</a></div>
-                                <div class="card-view">2000 lượt xem</div>
-                            </div>
-                        </div>
-
-
-
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 </div>
                 <div class="content-left col-md-4">

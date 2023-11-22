@@ -16,7 +16,7 @@
                     </div>
                 @endif
 
-                <table class="table">
+                <table class="table" style="margin-top: 20px">
                     <thead>
                         <tr>
                             <th scope="col">id</th>
@@ -41,7 +41,7 @@
                                         No Image
                                     @endif
                                 </td>
-                                <td>{{ $str->storyName }}</td>d
+                                <td>{{ $str->storyName }}</td>
                                 <td>{{ $str->storyAuthor }}</td>
                                 <td>{{ $str->category->categoryName}}</td>
                                 <td>
