@@ -4,48 +4,63 @@
 <div class="row">
     @include('Admin.navDashboad')
     <div class="col-md-10">
-        <h1>Sửa truyện tranh tại đây</h1>
-
+        <h1>Thêm truyện tranh tại đây</h1>
         <div class="content-dash">
-
             <div class="card-body">
-                <form action="{{route('books.store')}}" method="POST">
+                @if (Session::has('success'))
+                    <div class="alert alert-success col-md-6">
+                        {{Session::get('success')}}
+                    </div>
+                @endif
+                <form action="{{route('stories.update',$story->storyID)}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <strong>Tên Sách</strong>
-                                <input type="text" name="name" class="form-control" placeholder="Nhập tên sách">
+                                <input value="{{$story->storyName}}" type="text" name="storyName" class="form-control" placeholder="Nhập tên sách">
                             </div>
+
                             <div class="form-group">
-                                <strong>Tác Giả</strong>
-                                <input type="text" name="author" class="form-control" placeholder="Nhập tên tác giả">
+                                <strong>Tác giả</strong>
+                                <input  value="{{$story->storyAuthor}}" type="text" name="storyAuthor" class="form-control" placeholder="Nhập mô tả">
                             </div>
                             <div class="form-group">
                                 <strong>Mô tả</strong>
-                                <input type="text" name="description" class="form-control" placeholder="Nhập mô tả">
+                                <input  value="{{$story->storyDesc}}" type="text" name="storyDesc" class="form-control" placeholder="Nhập tên tác giả">
                             </div>
                             <div class="form-group">
                                 <strong>Nội dung</strong>
-                                <input type="text" name="content" class="form-control" placeholder="Nhập nội dung">
+                                <textarea   class="form-control" name="storyContent" id="" cols="30" rows="10" placeholder="Nhập nội dung">{{$story->storyContent}}</textarea>
                             </div>
+
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <strong>Thể loại</strong><br>
+                                <select name="categoryID" class="form-select" aria-label="Default select example">
+                                    @foreach ($category as $cat)
+                                        <option value="{{ $cat->categoryID }}">{{ $cat->categoryName }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <strong>Hình ảnh</strong>
-                                <input type="file" name="name" class="form-control" placeholder="tải lên">
+                                <input type="file" name="storyImage"  id="image-input" class="form-control" accept="image/*"  placeholder="tải lên">
+                                <div class="image-display" style="display: flex">
+                                    <div id="preview-container"  >
+                                        <img id="image-preview" class="image-preview" >
+                                        <p style="text-align: center">Ảnh mới</p>
+                                    </div>
+
+                                    <div  style="width: 200px; height: 300px; display: block; margin: 0px auto" >
+                                        <img  style="width: 100%;height: 100%;object-fit: cover" src="{{ asset('uploads/' . $story->storyImage) }}" >
+                                        <p style="text-align: center">Ảnh cũ</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <strong>T</strong>
-                                <input type="text" name="author" class="form-control" placeholder="Nhập tên tác giả">
-                            </div>
-                            <div class="form-group">
-                                <strong>Mô tả</strong>
-                                <input type="text" name="description" class="form-control" placeholder="Nhập mô tả">
-                            </div>
-                            <div class="form-group">
-                                <strong>Nội dung</strong>
-                                <input type="text" name="content" class="form-control" placeholder="Nhập nội dung">
-                            </div>
+
                         </div>
                     </div>
 

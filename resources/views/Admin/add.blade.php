@@ -5,47 +5,54 @@
     @include('Admin.navDashboad')
     <div class="col-md-10">
         <h1>Thêm truyện tranh tại đây</h1>
-
         <div class="content-dash">
-
             <div class="card-body">
-                <form action="" method="POST">
+                @if (Session::has('success'))
+                    <div class="alert alert-success col-md-6">
+                        {{Session::get('success')}}
+                    </div>
+                @endif
+                <form action="{{route('stories.store')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <strong>Tên Sách</strong>
-                                <input type="text" name="name" class="form-control" placeholder="Nhập tên sách">
+                                <input type="text" name="storyName" class="form-control" placeholder="Nhập tên sách">
                             </div>
+
                             <div class="form-group">
-                                <strong>Tác Giả</strong>
-                                <input type="text" name="author" class="form-control" placeholder="Nhập tên tác giả">
+                                <strong>Tác giả</strong>
+                                <input type="text" name="storyAuthor" class="form-control" placeholder="Nhập tác giả">
                             </div>
                             <div class="form-group">
                                 <strong>Mô tả</strong>
-                                <input type="text" name="description" class="form-control" placeholder="Nhập mô tả">
+                                <input type="text" name="storyDesc" class="form-control" placeholder="Nhập mô tả">
                             </div>
                             <div class="form-group">
                                 <strong>Nội dung</strong>
-                                <input type="text" name="content" class="form-control" placeholder="Nhập nội dung">
+                                <textarea class="form-control" name="storyContent" id="" cols="30" rows="10" placeholder="Nhập nội dung"></textarea>
+
                             </div>
+
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <strong>Thể loại</strong><br>
+                                <select name="categoryID" class="form-select" aria-label="Default select example">
+                                    @foreach ($category as $cat)
+                                        <option value="{{ $cat->categoryID }}">{{ $cat->categoryName }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <strong>Hình ảnh</strong>
-                                <input type="file" name="name" class="form-control" placeholder="tải lên">
+                                <input type="file" name="storyImage"  id="image-input" class="form-control" accept="image/*"  placeholder="tải lên">
+                                <div id="preview-container"  >
+                                    <img id="image-preview" class="image-preview">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <strong>T</strong>
-                                <input type="text" name="author" class="form-control" placeholder="Nhập tên tác giả">
-                            </div>
-                            <div class="form-group">
-                                <strong>Mô tả</strong>
-                                <input type="text" name="description" class="form-control" placeholder="Nhập mô tả">
-                            </div>
-                            <div class="form-group">
-                                <strong>Nội dung</strong>
-                                <input type="text" name="content" class="form-control" placeholder="Nhập nội dung">
-                            </div>
+
                         </div>
                     </div>
 

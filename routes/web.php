@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\StoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,11 +26,16 @@ Route::post('/login', [LoginController::class, 'login'])->name('custom.login');
 Route::get('/login/forgot', [LoginController::class, 'showForgot'])->name('custom.forgot.form');
 Route::get('/register', [LoginController::class, 'showRegisterForm'])->name('custom.register.form');
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboad.index');
-Route::get('/admin/add', [AdminController::class, 'showFormAddBook'])->name('admin.book.add');
-Route::get('/admin/edit', [AdminController::class, 'showFormEditBook'])->name('admin.book.edit');
 
-// Route::prefix('admin')->group(function () {
-//     Route::get('/dashboad', 'AdminController@index')->name('admin.dashboad');
-// });
+// Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboad.index');
+
+// Route::get('/admin/add', [AdminController::class, 'showFormAddBook'])->name('admin.book.add');
+// Route::post('/admin/add', [AdminController::class, 'storeBook'])->name('admin.book.addStore');
+// Route::post('/admin/delete', [AdminController::class, 'deleteBook'])->name('admin.book.delete');
+
+// Route::get('/admin/edit', [AdminController::class, 'showFormEditBook'])->name('admin.book.edit');
+
+Route::resource('/stories',StoryController::class);
+
+Route::resource('/category',CategoryController::class);
 

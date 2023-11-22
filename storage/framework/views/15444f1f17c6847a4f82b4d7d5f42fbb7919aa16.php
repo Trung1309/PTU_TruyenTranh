@@ -44,6 +44,7 @@
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
     <script type="text/javascript" src="<?php echo e(asset('js/slick.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(asset('js/js.js')); ?>"></script>
 </body>
 
 </html>
