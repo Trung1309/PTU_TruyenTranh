@@ -3,9 +3,16 @@
     <div class="container">
         <div class="login-form">
 
+
             <form class="bg-light" action="<?php echo e(route('custom.register')); ?>" method="POST">
                 <?php echo csrf_field(); ?>
                 <h2 style="text-align: center;">Đăng kí</h2>
+                <?php if($errors->has('email')): ?>
+                    <div class="alert alert-danger">
+                        <?php echo e($errors->first('email')); ?>
+
+                    </div>
+                <?php endif; ?>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Họ và tên</label>
                     <input name="name" type="text" class="form-control" aria-describedby="emailHelp">

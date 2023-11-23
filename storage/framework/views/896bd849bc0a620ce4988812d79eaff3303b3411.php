@@ -39,7 +39,7 @@
                 <div class="row">
                     <a href="<?php echo e(route('custom.register.form')); ?>" class="col-md-6"> Đăng kí </a>
                     <div class="col-md-6">
-                        <a href="<?php echo e(route('custom.forgot.form')); ?>" class="" style="text-align: right !important;"> Quên mật khẩu ?</a>
+                        <a href="<?php echo e(route('password.request')); ?>" class="" style="text-align: right !important;"> Quên mật khẩu ?</a>
                     </div>
                 </div>
                 <a href="<?php echo e(route('custom.google')); ?>" class="btn btn-google btn-user btn-block " style="background: #e74c3c; color: #fff;"><i class="fa-brands fa-google" style="color: #fafafa;"></i>  Google</a>

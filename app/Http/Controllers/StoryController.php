@@ -138,7 +138,7 @@ class StoryController extends Controller
             $story->update($request->except('storyImage'));
         }
 
-        return redirect()->route('stories.index')->with('success', 'Cập nhật thành công thông tin thể loại');
+        return redirect()->route('stories.index')->with('success', 'Cập nhật thành công thông tin sách');
 
 
     }

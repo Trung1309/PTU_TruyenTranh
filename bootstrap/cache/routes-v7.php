@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::xqZeGVASlpSsu65i',
+            '_route' => 'generated::Q68s5BfB4H6Hh7cI',
           ),
           1 => NULL,
           2 => 
@@ -165,26 +165,6 @@ app('router')->setCompiledRoutes(
           2 => 
           array (
             'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/login/forgot' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'custom.forgot.form',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
           ),
           3 => NULL,
           4 => false,
@@ -327,6 +307,61 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/forgot' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'password.request',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'password.email',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/reset-password' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'password.update',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/stories' => 
       array (
         0 => 
@@ -442,11 +477,35 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/stories/([^/]++)(?|(*:27)|/edit(*:39)|(*:46))|/category/([^/]++)(?|(*:75)|/edit(*:87)|(*:94)))/?$}sDu',
+      0 => '{^(?|/reset\\-password/([^/]++)/([^/]++)(*:41)|/stories/([^/]++)(?|(*:68)|/edit(*:80)|(*:87))|/category/([^/]++)(?|(*:116)|/edit(*:129)|(*:137)))/?$}sDu',
     ),
     3 => 
     array (
-      27 => 
+      41 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'password.reset',
+          ),
+          1 => 
+          array (
+            0 => 'token',
+            1 => 'email',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      68 => 
       array (
         0 => 
         array (
@@ -469,7 +528,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      39 => 
+      80 => 
       array (
         0 => 
         array (
@@ -492,7 +551,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      46 => 
+      87 => 
       array (
         0 => 
         array (
@@ -534,7 +593,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      75 => 
+      116 => 
       array (
         0 => 
         array (
@@ -557,7 +616,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      87 => 
+      129 => 
       array (
         0 => 
         array (
@@ -580,7 +639,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      94 => 
+      137 => 
       array (
         0 => 
         array (
@@ -783,7 +842,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::xqZeGVASlpSsu65i' => 
+    'generated::Q68s5BfB4H6Hh7cI' => 
     array (
       'methods' => 
       array (
@@ -800,13 +859,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:295:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004db0000000000000000";}";s:4:"hash";s:44:"9ukOjPf9lc7pr8gQVE3svz3+r06MDYzZ27dH5+d2XGM=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004f00000000000000000";}";s:4:"hash";s:44:"MMcZXaryNLB0nGdhuKtdwADPPG1ppo7czdMZRCisRho=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::xqZeGVASlpSsu65i',
+        'as' => 'generated::Q68s5BfB4H6Hh7cI',
       ),
       'fallback' => false,
       'defaults' => 
@@ -917,43 +976,6 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'custom.login',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'custom.forgot.form' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'login/forgot',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'uses' => 'App\\Http\\Controllers\\LoginController@showForgot',
-        'controller' => 'App\\Http\\Controllers\\LoginController@showForgot',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'custom.forgot.form',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1213,6 +1235,152 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'custom.register',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'password.request' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'forgot',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ForgotController@showForgotPasswordForm',
+        'controller' => 'App\\Http\\Controllers\\ForgotController@showForgotPasswordForm',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'password.request',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'password.email' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'forgot',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ForgotController@sendResetLinkEmail',
+        'controller' => 'App\\Http\\Controllers\\ForgotController@sendResetLinkEmail',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'password.email',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'password.reset' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'reset-password/{token}/{email}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ForgotController@showResetForm',
+        'controller' => 'App\\Http\\Controllers\\ForgotController@showResetForm',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'password.reset',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'password.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'reset-password',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ForgotController@reset',
+        'controller' => 'App\\Http\\Controllers\\ForgotController@reset',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'password.update',
       ),
       'fallback' => false,
       'defaults' => 

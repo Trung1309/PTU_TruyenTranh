@@ -7,7 +7,7 @@
     'url' => 'http://localhost:8000',
     'asset_url' => NULL,
     'timezone' => 'UTC',
-    'locale' => 'en',
+    'locale' => 'vi',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
     'key' => 'base64:f4yMbuIvah5vQkojlxZ2dHTHH3S+ZEqlbRWrhjaEJqQ=',
@@ -124,6 +124,7 @@
         'table' => 'password_resets',
         'expire' => 60,
         'throttle' => 60,
+        'email' => 'auth.emails.password',
       ),
     ),
     'password_timeout' => 10800,
@@ -503,11 +504,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'mailpit',
-        'port' => '1025',
-        'encryption' => NULL,
-        'username' => NULL,
-        'password' => NULL,
+        'host' => 'smtp.gmail.com',
+        'port' => '587',
+        'encryption' => 'tls',
+        'username' => 'quoctrung3884@gmail.com',
+        'password' => 'xkfb vymx aebw maqw',
         'timeout' => NULL,
         'local_domain' => NULL,
       ),
@@ -549,7 +550,7 @@
     ),
     'from' => 
     array (
-      'address' => 'hello@example.com',
+      'address' => 'PTU.group@gmail.com',
       'name' => 'Laravel',
     ),
     'markdown' => 

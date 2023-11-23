@@ -8,7 +8,10 @@
         <li><a href="<?php echo e(route('home')); ?>">Trang chủ</a></li>
         <form action="<?php echo e(route('custom.logout')); ?>" method="post">
             <?php echo csrf_field(); ?>
-            <button class="nav-link" type="submit" style="border: none;background: none">Đăng xuất</button>
+            <li>
+                <button type="submit" style="border: none;background: none;color: white">Đăng xuất</button>
+            </li>
+
         </form>
     </ul>
 

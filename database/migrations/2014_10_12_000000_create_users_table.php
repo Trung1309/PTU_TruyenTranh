@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('avatar')->default('avatar');
+            $table->string('password')->default('social');
+            $table->string('avatar')->default('https://cdn-icons-png.flaticon.com/512/1053/1053244.png');
             $table->string('role')->default('user');
             $table->rememberToken();
             $table->timestamps();

@@ -1,5 +1,27 @@
 <header class="bg-light">
     <div class="container">
+        <div class="header-top">
+            <div class="user">
+                @auth
+                    <div class="user-name"> {{ Auth::user()->name }}</div>
+                    <div class="user-avt">
+                        @if(Auth::user()->avatar)
+                        <img src="{{ asset(Auth::user()->avatar) }}" alt="Avatar">
+                        @else
+                            <!-- Nếu không có avatar, bạn có thể hiển thị ảnh mặc định hoặc thông báo khác -->
+                            <p>No avatar available</p>
+                        @endif
+                    </div>
+                @else
+                    <div class="user-name">Chưa đăng nhập</div>
+                    <div class="user-avt">
+                        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="">
+                    </div>
+
+                @endauth
+
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="{{route('home')}}"><strong>PTU</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
@@ -31,7 +53,9 @@
                     </li>
                     @auth
                         @if(Auth::user()->role === 'admin')
-                            <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                        <li class="nav-item">
+                            <a href="{{ route('stories.index') }}" class="nav-link">Dashboard</a>
+                        </li>
                         @endif
                     @endauth
                     @if(Auth::check())

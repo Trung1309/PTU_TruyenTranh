@@ -5,9 +5,15 @@
     <div class="container">
         <div class="login-form">
 
+
             <form class="bg-light" action="{{route('custom.register')}}" method="POST">
                 @csrf
                 <h2 style="text-align: center;">Đăng kí</h2>
+                @if ($errors->has('email'))
+                    <div class="alert alert-danger">
+                        {{ $errors->first('email') }}
+                    </div>
+                @endif
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Họ và tên</label>
                     <input name="name" type="text" class="form-control" aria-describedby="emailHelp">

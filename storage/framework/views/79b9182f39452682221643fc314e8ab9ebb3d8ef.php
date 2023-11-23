@@ -1,5 +1,27 @@
 <header class="bg-light">
     <div class="container">
+        <div class="header-top">
+            <div class="user">
+                <?php if(auth()->guard()->check()): ?>
+                    <div class="user-name"> <?php echo e(Auth::user()->name); ?></div>
+                    <div class="user-avt">
+                        <?php if(Auth::user()->avatar): ?>
+                        <img src="<?php echo e(asset(Auth::user()->avatar)); ?>" alt="Avatar">
+                        <?php else: ?>
+                            <!-- Nếu không có avatar, bạn có thể hiển thị ảnh mặc định hoặc thông báo khác -->
+                            <p>No avatar available</p>
+                        <?php endif; ?>
+                    </div>
+                <?php else: ?>
+                    <div class="user-name">Chưa đăng nhập</div>
+                    <div class="user-avt">
+                        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="">
+                    </div>
+
+                <?php endif; ?>
+
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="<?php echo e(route('home')); ?>"><strong>PTU</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
@@ -31,7 +53,9 @@
                     </li>
                     <?php if(auth()->guard()->check()): ?>
                         <?php if(Auth::user()->role === 'admin'): ?>
-                            <a href="<?php echo e(route('admin.dashboard')); ?>">Dashboard</a>
+                        <li class="nav-item">
+                            <a href="<?php echo e(route('stories.index')); ?>" class="nav-link">Dashboard</a>
+                        </li>
                         <?php endif; ?>
                     <?php endif; ?>
                     <?php if(Auth::check()): ?>

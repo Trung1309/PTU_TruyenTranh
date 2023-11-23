@@ -8,7 +8,10 @@
         <li><a href="{{route('home')}}">Trang chủ</a></li>
         <form action="{{ route('custom.logout') }}" method="post">
             @csrf
-            <button class="nav-link" type="submit" style="border: none;background: none">Đăng xuất</button>
+            <li>
+                <button type="submit" style="border: none;background: none;color: white">Đăng xuất</button>
+            </li>
+
         </form>
     </ul>
 

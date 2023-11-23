@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StoryController;
+use App\Http\Controllers\ForgotController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('custom.login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('custom.login');
-Route::get('/login/forgot', [LoginController::class, 'showForgot'])->name('custom.forgot.form');
+
 Route::post('/logout', [LoginController::class, 'logout'])->name('custom.logout');
 
 
@@ -42,6 +43,11 @@ Route::group(['middleware' => 'web'], function () {
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('custom.register.form');
 Route::post('/register', [RegisterController::class, 'register'])->name('custom.register');
 
+
+Route::get('/forgot', [ForgotController::class, 'showForgotPasswordForm'])->name('password.request');
+Route::post('/forgot', [ForgotController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('/reset-password/{token}/{email}', [ForgotController::class, 'showResetForm'])->name('password.reset');
+Route::post('/reset-password', [ForgotController::class, 'reset'])->name('password.update');
 
 Route::middleware(['admin'])->group(function () {
     Route::get('/stories', function () {

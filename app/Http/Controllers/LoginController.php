@@ -44,10 +44,7 @@ class LoginController extends Controller
 
 
 
-    public function showForgot()
-    {
-        return view('forgot');
-    }
+
 
 
     public function redirectToGoogle()
@@ -60,7 +57,7 @@ class LoginController extends Controller
         $googleUser = Socialite::driver('google')->user();
 
         // Tìm hoặc tạo một người dùng mới với thông tin từ Google
-        $user = UserSocial::firstOrNew(['email' => $googleUser->getEmail()], [
+        $user = User::firstOrNew(['email' => $googleUser->getEmail()], [
             'name' => $googleUser->getName(),
             'avatar' => $googleUser->getAvatar(),
         ]);
