@@ -4,7 +4,7 @@
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://localhost',
+    'url' => 'http://localhost:8000',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
@@ -375,7 +375,7 @@
       array (
         'driver' => 'local',
         'root' => 'D:\\New Volume\\DaiHoc\\Studies_7\\CongNgheMoi\\ProjectLaravel\\test1\\storage\\app/public',
-        'url' => 'http://localhost/storage',
+        'url' => 'http://localhost:8000/storage',
         'visibility' => 'public',
         'throw' => false,
       ),
@@ -624,7 +624,7 @@
       2 => '127.0.0.1',
       3 => '127.0.0.1:8000',
       4 => '::1',
-      5 => 'localhost',
+      5 => 'localhost:8000',
     ),
     'guard' => 
     array (
@@ -662,6 +662,12 @@
       'client_id' => '1071320858350-r231brusqh6agu2apq2rqjcdigdelm0i.apps.googleusercontent.com',
       'client_secret' => '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',
       'redirect' => 'http://127.0.0.1:8000/login/google/callback',
+    ),
+    'facebook' => 
+    array (
+      'client_id' => '230101739980662',
+      'client_secret' => '162693492793041aa79bc2f3f3050a80',
+      'redirect' => 'http://127.0.0.1:8000/login/facebook/callback',
     ),
   ),
   'session' => 

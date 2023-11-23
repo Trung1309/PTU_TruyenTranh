@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StoryController;
@@ -24,10 +25,29 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('custom.login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('custom.login');
 Route::get('/login/forgot', [LoginController::class, 'showForgot'])->name('custom.forgot.form');
-Route::get('/register', [LoginController::class, 'showRegisterForm'])->name('custom.register.form');
-Route::get('/login/google',  [LoginController::class, 'redirectToGoogle'])->name('custom.google');
-Route::get('/login/google/callback', [LoginController::class, 'handleGoogleCallback'])->name('custom.google.callback');
+Route::post('/logout', [LoginController::class, 'logout'])->name('custom.logout');
 
+
+// Trong routes/web.php
+
+Route::get('/login/facebook', [LoginController::class, 'redirectToFacebook'])->name('custom.facebook');
+Route::get('/login/facebook/callback', [LoginController::class, 'handleFacebookCallback'])->name('custom.facebook.callback');
+
+Route::group(['middleware' => 'web'], function () {
+    // Routes liên quan đến đăng nhập Google
+    Route::get('/login/google',  [LoginController::class, 'redirectToGoogle'])->name('custom.google');
+    Route::get('/login/google/callback', [LoginController::class, 'handleGoogleCallback'])->name('custom.google.callback');
+});
+
+Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('custom.register.form');
+Route::post('/register', [RegisterController::class, 'register'])->name('custom.register');
+
+
+Route::middleware(['admin'])->group(function () {
+    Route::get('/stories', function () {
+        return view('Admin.dashboard');
+    })->name('admin.dashboard');
+});
 
 // Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboad.index');
 

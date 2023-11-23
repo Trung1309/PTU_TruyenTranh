@@ -18,9 +18,28 @@ class LoginController extends Controller
         return view('login');
     }
 
-    public function login(AuthRequest $request)
+    public function login(Request $request)
     {
+        $credentials = $request->only('email', 'password');
 
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            $user = Auth::user();
+
+            if ($user->role === 'admin') {
+                return redirect()->route('stories.index')->with('success', 'Đăng nhập thành công');;
+            } else {
+                return redirect()->route('home')->with('success', 'Đăng nhập thành công');;
+            }
+        }
+
+        return redirect()->back()->withInput()->withErrors(['email' => 'Email or password is incorrect']);
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+
+        $story = StoryModel::paginate();
+        return view('welcome',compact('story'))->with('i',(request()->input('page',1)-1)*10);
     }
 
 
@@ -51,13 +70,35 @@ class LoginController extends Controller
         // Đăng nhập người dùng vào hệ thống
         Auth::login($user, true);
 
+        return redirect('/');
+
+    }
+
+    public function redirectToFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    public function handleFacebookCallback()
+    {
+        $facebookUser = Socialite::driver('facebook')->user();
+
+        // Xử lý thông tin user và đăng nhập hoặc đăng ký user
+        // ...
+        // Tìm hoặc tạo một người dùng mới với thông tin từ Google
+        $user = UserSocial::firstOrNew(['email' => $facebookUser->getEmail()], [
+            'name' => $facebookUser->getName(),
+            'avatar' => $facebookUser->getAvatar(),
+        ]);
+
+        $user->save();
+
+        Auth::login($user, true);
+
         $story = StoryModel::paginate();
         return view('welcome',compact('story'))->with('i',(request()->input('page',1)-1)*10);
-
     }
 
-    public function showRegisterForm()
-    {
-        return view('register');
-    }
+
+
 }

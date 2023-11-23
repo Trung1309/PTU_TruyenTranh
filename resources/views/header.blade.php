@@ -29,9 +29,40 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Giới thiệu</a>
                     </li>
+                    @auth
+                        @if(Auth::user()->role === 'admin')
+                            <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                        @endif
+                    @endauth
+                    @if(Auth::check())
+
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('custom.login.form')}}">Đăng nhập</a>
+                        <form action="{{ route('custom.logout') }}" method="post">
+                            @csrf
+                            <button class="nav-link" type="submit" style="border: none;background: none">Đăng xuất</button>
+                        </form>
                     </li>
+                    @else
+                        <!-- Hiển thị nội dung cho người dùng chưa đăng nhập -->
+                        <!-- Nếu người dùng chưa đăng nhập -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('custom.login.form')}}">Đăng nhập</a>
+                        </li>
+                    @endif
+                    {{-- @auth
+                    <li class="nav-item">
+                        <form action="{{ route('custom.logout') }}" method="post">
+                            @csrf
+                            <button type="submit">Đăng xuất</button>
+                        </form>
+                    </li>
+                    @else
+                        <!-- Nếu người dùng chưa đăng nhập -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('custom.login.form')}}">Đăng nhập</a>
+                        </li>
+                    @endauth --}}
+
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search">

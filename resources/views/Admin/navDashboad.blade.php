@@ -6,7 +6,10 @@
         <li><a href="{{route('category.index')}}">Thêm thể loại</a></li>
         <li><a href="#">Thống kê</a></li>
         <li><a href="{{route('home')}}">Trang chủ</a></li>
-        <li><a href="#">Dăng xuất tài khoản</a></li>
+        <form action="{{ route('custom.logout') }}" method="post">
+            @csrf
+            <button class="nav-link" type="submit" style="border: none;background: none">Đăng xuất</button>
+        </form>
     </ul>
 
 </div>

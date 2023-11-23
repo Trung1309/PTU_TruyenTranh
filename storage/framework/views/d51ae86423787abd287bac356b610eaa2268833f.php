@@ -6,7 +6,10 @@
         <li><a href="<?php echo e(route('category.index')); ?>">Thêm thể loại</a></li>
         <li><a href="#">Thống kê</a></li>
         <li><a href="<?php echo e(route('home')); ?>">Trang chủ</a></li>
-        <li><a href="#">Dăng xuất tài khoản</a></li>
+        <form action="<?php echo e(route('custom.logout')); ?>" method="post">
+            <?php echo csrf_field(); ?>
+            <button class="nav-link" type="submit" style="border: none;background: none">Đăng xuất</button>
+        </form>
     </ul>
 
 </div>

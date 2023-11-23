@@ -29,9 +29,28 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Giới thiệu</a>
                     </li>
+                    <?php if(auth()->guard()->check()): ?>
+                        <?php if(Auth::user()->role === 'admin'): ?>
+                            <a href="<?php echo e(route('admin.dashboard')); ?>">Dashboard</a>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                    <?php if(Auth::check()): ?>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo e(route('custom.login.form')); ?>">Đăng nhập</a>
+                        <form action="<?php echo e(route('custom.logout')); ?>" method="post">
+                            <?php echo csrf_field(); ?>
+                            <button class="nav-link" type="submit" style="border: none;background: none">Đăng xuất</button>
+                        </form>
                     </li>
+                    <?php else: ?>
+                        <!-- Hiển thị nội dung cho người dùng chưa đăng nhập -->
+                        <!-- Nếu người dùng chưa đăng nhập -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo e(route('custom.login.form')); ?>">Đăng nhập</a>
+                        </li>
+                    <?php endif; ?>
+                    
+
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search">
