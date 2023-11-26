@@ -4,56 +4,7 @@
 @include('header')
 <main>
     <div class="container">
-        <div class="slider">
-            <div class="slider-item">
-                <img class="slider-avt" src="https://stbhatay.com.vn/wp-content/uploads/2023/02/sv24.webp" alt="">
-                <div class="slider-content">
-                    <a href="#" class="slider-title">in chàoin chàoin chàoin chàoin chàoX</a>
-                </div>
-            </div>
-            <div class="slider-item">
-                <img class="slider-avt" src="https://stbhatay.com.vn/wp-content/uploads/2023/02/sv24.webp" alt="">
-                <div class="slider-content">
-                    <a href="#" class="slider-title">Xin chào</a>
-                </div>
-            </div>
-            <div class="slider-item">
-                <img class="slider-avt" src="https://stbhatay.com.vn/wp-content/uploads/2023/02/sv24.webp" alt="">
-                <div class="slider-content">
-                    <a href="#" class="slider-title">Xin chào</a>
-                </div>
-            </div>
-            <div class="slider-item">
-                <img class="slider-avt" src="https://stbhatay.com.vn/wp-content/uploads/2023/02/sv24.webp" alt="">
-                <div class="slider-content">
-                    <a href="#" class="slider-title">Xin chào</a>
-                </div>
-            </div>
-            <div class="slider-item">
-                <img class="slider-avt" src="https://stbhatay.com.vn/wp-content/uploads/2023/02/sv24.webp" alt="">
-                <div class="slider-content">
-                    <a href="#" class="slider-title">Xin chào</a>
-                </div>
-            </div>
-            <div class="slider-item">
-                <img class="slider-avt" src="https://stbhatay.com.vn/wp-content/uploads/2023/02/sv24.webp" alt="">
-                <div class="slider-content">
-                    <a href="#" class="slider-title">Xin chào</a>
-                </div>
-            </div>
-            <div class="slider-item">
-                <img class="slider-avt" src="https://stbhatay.com.vn/wp-content/uploads/2023/02/sv24.webp" alt="">
-                <div class="slider-content">
-                    <a href="#" class="slider-title">Xin chào</a>
-                </div>
-            </div>
-            <div class="slider-item">
-                <img class="slider-avt" src="https://stbhatay.com.vn/wp-content/uploads/2023/02/sv24.webp" alt="">
-                <div class="slider-content">
-                    <a href="#" class="slider-title">Xin chào</a>
-                </div>
-            </div>
-        </div>
+        @include('slider')
     </div>
     <section>
         <div class="container">
@@ -67,30 +18,14 @@
                                 <img src="{{ asset('uploads/' . $str->storyImage) }}" alt="">
                             </div>
                             <div class="card-content">
-                                <div class="card-title"><a href="#" >{{$str->storyName}}</a></div>
+                                <div class="card-title"><a href="{{route('stories.show',$str->storyID)}}" >{{$str->storyName}}</a></div>
                                 <div class="card-cat">{{ $str->category->categoryName}}    </div>
                             </div>
                         </div>
                         @endforeach
                     </div>
                 </div>
-                <div class="content-left col-md-4">
-                    <div class="sidebar">
-                        <div class="part-title">Thể Loại</div>
-                        <ul>
-                            <li><a href="#">category 1</a></li>
-                            <li><a href="#">category 1</a></li>
-                            <li><a href="#">category 1</a></li>
-                            <li><a href="#">category 1</a></li>
-                            <li><a href="#">category 1</a></li>
-                            <li><a href="#">category 1</a></li>
-                            <li><a href="#">category 1</a></li>
-                            <li><a href="#">category 1</a></li>
-                            <li><a href="#">category 1</a></li>
-                            <li><a href="#">category 1</a></li>
-                        </ul>
-                    </div>
-                </div>
+                @include('sidebar')
             </div>
         </div>
     </section>

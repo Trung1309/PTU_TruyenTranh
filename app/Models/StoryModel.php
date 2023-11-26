@@ -16,7 +16,8 @@ class StoryModel extends Model
         'storyAuthor',
         'storyContent',
         'storyImage',
-        'categoryID'
+        'categoryID',
+        'views'
     ];
     protected $primaryKey = 'storyID';
 

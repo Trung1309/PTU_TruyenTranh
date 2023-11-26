@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -14,6 +15,8 @@ class UserController extends Controller
     public function index()
     {
         //
+        $user = User::paginate(10);
+        return view('Admin.dashUser',compact('user'))->with('i',(request()->input('page',1)-1)*10);
     }
 
     /**
@@ -54,9 +57,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
         //
+        return view('Admin.editUser',compact('user'));
     }
 
     /**
@@ -66,9 +70,16 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
         //
+        //
+        $user
+        ->update($request->all());
+        return redirect()->route('user.index')->with('success','Cập nhật thành công người dùng');
+
+
+
     }
 
     /**
@@ -77,8 +88,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
         //
+        $user->delete();
+        return redirect()->route('user.index')->with('success','Xoá thành công tài khoản người dùng');
     }
 }

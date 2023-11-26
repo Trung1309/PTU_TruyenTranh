@@ -18,8 +18,8 @@ class StoryController extends Controller
         //
 
 
-        $story = StoryModel::orderBy('created_at', 'desc')->get();
-        return view('Admin.dashboard',compact('story'))->with('i',(request()->input('page',1)-1)*10);
+        $story = StoryModel::orderBy('created_at', 'desc')->paginate(5);
+        return view('Admin.dashboard',compact('story'))->with('i',(request()->input('page',1)-1)*5);
     }
 
     /**
@@ -79,10 +79,13 @@ class StoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(StoryModel $story)
     {
         //
+        $story->increment('views');
+        return view('detail', compact('story'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -157,5 +160,17 @@ class StoryController extends Controller
         }
         $story->delete();
         return redirect()->route('stories.index')->with('success', 'Đã xóa thành công.');
+    }
+
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $story = StoryModel::where('storyName', 'like', "%$query%")
+            ->orWhere('storyDesc', 'like', "%$query%")
+            ->get();
+
+        return response()->json(['story' => $story]);
     }
 }

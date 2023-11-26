@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('storyContent');
             $table->string('storyImage');
             $table->string('categoryID');
+            $table->integer('views')->default(0);
             $table->timestamps();
         });
     }

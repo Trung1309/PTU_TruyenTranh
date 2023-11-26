@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StoryController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ForgotController;
 
 /*
@@ -66,8 +67,11 @@ Route::middleware(['admin'])->group(function () {
 Route::resource('/stories',StoryController::class);
 
 Route::resource('/category',CategoryController::class);
+Route::get('/category/{category}', [CategoryController::class, 'show'])->name('category.show');
 
+Route::resource('/user',UserController::class);
 
+Route::get('/stories/search', [StoryController::class, 'search'])->name('stories.search');
 // Trong routes/web.php
 
 

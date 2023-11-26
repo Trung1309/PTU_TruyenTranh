@@ -38,6 +38,22 @@ class CategoryController extends Controller
         }
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(CategoryModel $category)
+    {
+        //
+
+        $category = optional($category);
+
+        $category->load('stories');
+        return view('category', compact('category'));
+    }
+
 
 
     public function edit(CategoryModel $category)
@@ -71,6 +87,6 @@ class CategoryController extends Controller
     {
         //
         $category->delete();
-        return redirect()->route('category.index')->with('success','Xoá thành công sách');
+        return redirect()->route('category.index')->with('success','Xoá thành công thể loại');
     }
 }

@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Q68s5BfB4H6Hh7cI',
+            '_route' => 'generated::TLClRM3pECZV5qDb',
           ),
           1 => NULL,
           2 => 
@@ -474,10 +474,66 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/user' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'user.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'user.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/user/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'user.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/reset\\-password/([^/]++)/([^/]++)(*:41)|/stories/([^/]++)(?|(*:68)|/edit(*:80)|(*:87))|/category/([^/]++)(?|(*:116)|/edit(*:129)|(*:137)))/?$}sDu',
+      0 => '{^(?|/reset\\-password/([^/]++)/([^/]++)(*:41)|/stories/(?|([^/]++)(?|(*:71)|/edit(*:83)|(*:90))|search(*:104))|/category/([^/]++)(?|(*:134)|/edit(*:147)|(*:155))|/user/([^/]++)(?|(*:181)|/edit(*:194)|(*:202)))/?$}sDu',
     ),
     3 => 
     array (
@@ -505,7 +561,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      68 => 
+      71 => 
       array (
         0 => 
         array (
@@ -528,7 +584,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      80 => 
+      83 => 
       array (
         0 => 
         array (
@@ -551,7 +607,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      87 => 
+      90 => 
       array (
         0 => 
         array (
@@ -593,7 +649,29 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      116 => 
+      104 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'stories.search',
+          ),
+          1 => 
+          array (
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      134 => 
       array (
         0 => 
         array (
@@ -616,7 +694,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      129 => 
+      147 => 
       array (
         0 => 
         array (
@@ -639,7 +717,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      137 => 
+      155 => 
       array (
         0 => 
         array (
@@ -670,6 +748,94 @@ app('router')->setCompiledRoutes(
           1 => 
           array (
             0 => 'category',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      181 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'user.show',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      194 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'user.edit',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      202 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'user.update',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'user.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'user',
           ),
           2 => 
           array (
@@ -842,7 +1008,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Q68s5BfB4H6Hh7cI' => 
+    'generated::TLClRM3pECZV5qDb' => 
     array (
       'methods' => 
       array (
@@ -865,7 +1031,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Q68s5BfB4H6Hh7cI',
+        'as' => 'generated::TLClRM3pECZV5qDb',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1777,14 +1943,14 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'category.show',
         'uses' => 'App\\Http\\Controllers\\CategoryController@show',
         'controller' => 'App\\Http\\Controllers\\CategoryController@show',
         'namespace' => NULL,
-        'prefix' => '/',
+        'prefix' => '',
         'where' => 
         array (
         ),
+        'as' => 'category.show',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1895,6 +2061,300 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'user.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'user',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'user.index',
+        'uses' => 'App\\Http\\Controllers\\UserController@index',
+        'controller' => 'App\\Http\\Controllers\\UserController@index',
+        'namespace' => NULL,
+        'prefix' => '/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'user.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'user/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'user.create',
+        'uses' => 'App\\Http\\Controllers\\UserController@create',
+        'controller' => 'App\\Http\\Controllers\\UserController@create',
+        'namespace' => NULL,
+        'prefix' => '/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'user.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'user',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'user.store',
+        'uses' => 'App\\Http\\Controllers\\UserController@store',
+        'controller' => 'App\\Http\\Controllers\\UserController@store',
+        'namespace' => NULL,
+        'prefix' => '/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'user.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'user/{user}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'user.show',
+        'uses' => 'App\\Http\\Controllers\\UserController@show',
+        'controller' => 'App\\Http\\Controllers\\UserController@show',
+        'namespace' => NULL,
+        'prefix' => '/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'user.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'user/{user}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'user.edit',
+        'uses' => 'App\\Http\\Controllers\\UserController@edit',
+        'controller' => 'App\\Http\\Controllers\\UserController@edit',
+        'namespace' => NULL,
+        'prefix' => '/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'user.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'user/{user}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'user.update',
+        'uses' => 'App\\Http\\Controllers\\UserController@update',
+        'controller' => 'App\\Http\\Controllers\\UserController@update',
+        'namespace' => NULL,
+        'prefix' => '/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'user.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'user/{user}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'user.destroy',
+        'uses' => 'App\\Http\\Controllers\\UserController@destroy',
+        'controller' => 'App\\Http\\Controllers\\UserController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'stories.search' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'stories/search',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\StoryController@search',
+        'controller' => 'App\\Http\\Controllers\\StoryController@search',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'stories.search',
       ),
       'fallback' => false,
       'defaults' => 

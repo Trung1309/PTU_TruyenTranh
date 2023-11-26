@@ -9,13 +9,15 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Models\UserSocial;
 use App\Models\User;
 use App\Models\StoryModel;
+use App\Models\CategoryModel;
 
 class LoginController extends Controller
 {
     //
     public function showLoginForm()
     {
-        return view('login');
+        $category = CategoryModel::all();
+        return view('login',compact('category'));
     }
 
     public function login(Request $request)
@@ -38,8 +40,7 @@ class LoginController extends Controller
     public function logout(Request $request){
         Auth::logout();
 
-        $story = StoryModel::paginate();
-        return view('welcome',compact('story'))->with('i',(request()->input('page',1)-1)*10);
+        return redirect('/');
     }
 
 

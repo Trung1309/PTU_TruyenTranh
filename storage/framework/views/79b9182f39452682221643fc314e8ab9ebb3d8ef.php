@@ -37,9 +37,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Thể loại <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="sub-menu">
-                            <li><a href="">sub 1</a></li>
-                            <li><a href="">sub 2</a></li>
-                            <li><a href="">sub 3</a></li>
+                            <?php $__currentLoopData = $allCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <li><a href="<?php echo e(route('category.show', $category->categoryID)); ?>"><?php echo e($category->categoryName); ?></a></li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </li>
                     <li class="nav-item">

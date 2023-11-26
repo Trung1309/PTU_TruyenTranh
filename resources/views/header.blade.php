@@ -37,9 +37,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Thể loại <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="sub-menu">
-                            <li><a href="">sub 1</a></li>
-                            <li><a href="">sub 2</a></li>
-                            <li><a href="">sub 3</a></li>
+                            @foreach($allCategories as $category)
+                                <li><a href="{{ route('category.show', $category->categoryID) }}">{{ $category->categoryName }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="nav-item">

@@ -10,6 +10,7 @@
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
+
                 @if (Session::has('success'))
                     <div class="alert alert-success col-md-6">
                         {{Session::get('success')}}
@@ -58,6 +59,10 @@
                     </tbody>
                 </table>
             </div>
+            <div class="pagination">
+                {{ $story->links('vendor.pagination.custom') }}
+            </div>
         </div>
+
     </div>
 @endsection

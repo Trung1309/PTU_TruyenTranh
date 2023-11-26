@@ -130,7 +130,7 @@ main .content .navbar-{
 }
 .cards{
     display: grid;
-    grid-template-columns: repeat(200px,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 }
 .card-item{
@@ -272,3 +272,74 @@ main .content .navbar-{
     object-fit: cover;
 }
 
+
+/* resources/css/app.css */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination-item {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.pagination-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #3490dc;
+    border: 1px solid #3490dc;
+    border-radius: 0.25rem;
+}
+
+.pagination-link:hover {
+    background-color: #3490dc;
+    color: #fff;
+}
+
+.pagination-item-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.pagination-ellipsis {
+    padding: 0.5rem 1rem;
+}
+
+.main-detail{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.main-detail .detail-avt{
+    width: 250px;
+    height: 400px;
+    display: block;
+    margin: 0px auto;
+}
+.main-detail .detail-avt img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.detail-title{
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0px;
+}
+.detail-info{
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    margin: 10px auto;
+    padding: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+}
